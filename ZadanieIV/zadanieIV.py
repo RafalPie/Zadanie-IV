@@ -31,3 +31,14 @@ for n in range (0, itr):
       det_symbol = 2 * (rx_symbol >= 0) - 1
       no_errors += 1*(tx_symbol != det_symbol)  
       ber[n] = no_errors / N
+      print ("SNR in dB:", snrindB)
+      print ("Numbder of errors:", no_errors)
+      print ("Error probability:", ber[n] )
+    plt.plot(snrindB_range, ber, 'o-',label='practical')
+    plt.axis([0, 10, 0, 0.1])
+    plt.xlabel('snr(dB)')
+    plt.ylabel('BER')
+    plt.grid(True)
+    plt.title('BPSK Modulation')
+    plt.legend()
+    plt.show()
